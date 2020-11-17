@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <title></title>
+        <style type="text/css">
+            .box {
+                display: block;
+                border: 1px solid black;
+                width: 600px;
+                padding: 5px;
+            }
+            #isi {
+                display: block;
+                height: auto;
+            }
+            #pesan {
+                width: 90%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div id="isi"></div>
+            <form onsubmit="return kirim()">
+                <input type="text" id="pesan">
+                <button onclick="return kirim()">Kirim</button>
+            </form>
+        </div>
+    </body>
+    <script type="text/javascript">
+        function kirim() {
+            let isi = document.getElementById("isi");
+            let pesan = document.getElementById("pesan");
+            let kirim = document.getElementById("kirim");
+            isi.innerHTML = isi.innerHTML + pesan.value + "<br>";
+            pesan.value = "";
+            return false;
+        }
+    </script>
+</html>

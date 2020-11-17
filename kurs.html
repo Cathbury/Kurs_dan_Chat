@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <title>Kurs Rupiah</title>
+        <style type="text/css">
+            table, tr, th, td {
+                border: 1px solid black;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            th {
+                background-color: azure;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Kurs Rupiah - Mata Uang Asing</p>
+        <table>
+            <tr>
+                <th>Masukkan Nilai</th>
+                <th>Valas</th>
+                <th>Nilai Rupiah</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="nilai" onkeyup="kurs()"></td>
+                <td>
+                    <select id="valas" onchange="kurs()">
+                        <option value="usd">Dollar US</option>
+                        <option value="sgd">Dollar Singapore</option>
+                        <option value="rm">Ringgit Malaysia</option>
+                        <option value="yen">Yen Jepang</option>
+                        <option value="euro">Euro</option>
+                        <option value="sar">Riyal Arab Saudi</option>
+                    </select>
+                </td>
+                <td><input type="text" id="hasil" readonly name="hasil"></td>
+            </tr>
+        </table>
+    </body>
+    <script type="text/javascript">
+        function kurs() {
+            let nilai = document.getElementById('nilai').value;
+            let valas = document.getElementById('valas').value;
+            let hasil = document.getElementById('hasil').value;
+            if (valas == "usd") {
+                hasil = nilai * 9915;
+                document.getElementById('hasil').value = hasil;
+            }
+            if (valas == "sgd") {
+                hasil = nilai * 13472;
+                document.getElementById('hasil').value = hasil;
+            }
+            if (valas == "rm") {
+                hasil = nilai * 874;
+                document.getElementById('hasil').value = hasil;
+            }
+            if (valas == "yen") {
+                hasil = nilai * 120;
+                document.getElementById('hasil').value = hasil;
+            }
+            if (valas == "euro") {
+                hasil = nilai * 15888;
+                document.getElementById('hasil').value = hasil;
+            }
+            if (valas == "sar") {
+                hasil = nilai * 3592;
+                document.getElementById('hasil').value = hasil;
+            }
+        }
+    </script>
+</html>
